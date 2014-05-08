@@ -125,11 +125,7 @@ class GoCardless_Request {
       // Curl options for POSt
 
       $curl_options[CURLOPT_POST] = 1;
-
-      if ( ! empty($params)) {
-        $curl_options[CURLOPT_POSTFIELDS] = http_build_query($params, null,
-          '&');
-      }
+      $curl_options[CURLOPT_POSTFIELDS] = http_build_query($params, null, '&');
 
     } elseif ($method == 'get') {
       // Curl options for GET
